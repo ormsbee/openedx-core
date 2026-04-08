@@ -9,6 +9,11 @@ amqp==5.3.1
     #   -r requirements/test.txt
     #   kombu
 asgiref==3.12.1
+annotated-types==0.7.0
+    # via
+    #   -r requirements/test.txt
+    #   pydantic
+asgiref==3.11.1
     # via
     #   -r requirements/test.txt
     #   django
@@ -141,6 +146,7 @@ djangorestframework-stubs==3.17.0
 dnspython==2.8.0
     # via
     #   -r requirements/test.txt
+    #   email-validator
     #   pymongo
 docutils==0.23
     # via readme-renderer
@@ -179,6 +185,15 @@ fastavro==1.12.2
 freezegun==1.5.5
     # via -r requirements/test.txt
 grimp==3.15
+email-validator==2.3.0
+    # via
+    #   -r requirements/test.txt
+    #   pydantic
+freezegun==1.5.5
+    # via -r requirements/test.txt
+fsspec==2026.3.0
+    # via -r requirements/test.txt
+grimp==3.14
     # via
     #   -r requirements/test.txt
     #   import-linter
@@ -187,6 +202,7 @@ id==1.6.1
 idna==3.18
     # via
     #   -r requirements/test.txt
+    #   email-validator
     #   requests
 import-linter==2.13
     # via -r requirements/test.txt
@@ -291,6 +307,12 @@ pycparser==3.0
     # via
     #   -r requirements/test.txt
     #   cffi
+pydantic[email]==2.13.3
+    # via -r requirements/test.txt
+pydantic-core==2.46.3
+    # via
+    #   -r requirements/test.txt
+    #   pydantic
 pydocstyle==6.3.0
     # via -r requirements/quality.in
 pygments==2.20.0
@@ -418,6 +440,14 @@ typing-extensions==4.16.0
     #   import-linter
     #   mypy
 tzdata==2026.3
+    #   pydantic
+    #   pydantic-core
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via
+    #   -r requirements/test.txt
+    #   pydantic
+tzdata==2026.1
     # via
     #   -r requirements/test.txt
     #   kombu
