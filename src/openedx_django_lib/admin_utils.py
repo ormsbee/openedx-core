@@ -33,6 +33,27 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
         return False
 
 
+class ImmutableModelAdmin(admin.ModelAdmin):
+    """
+    ModelAdmin subclass that removes any editing ability.
+
+    The Django Admin is really useful for quickly examining model data. At the
+    same time, model creation and updates follow specific rules that are meant
+    to be enforced above the model layer (in api.py files), so making edits in
+    the Django Admin is potentially dangerous.
+
+    In general, if you're providing Django Admin interfaces for your
+    openedx-core related app data models, you should subclass this class
+    instead of subclassing admin.ModelAdmin directly.
+    """
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
 def one_to_one_related_model_html(model_obj: models.Model) -> SafeText:
     """
     HTML for clickable list of a models that are 1:1-related to ``model_obj``.

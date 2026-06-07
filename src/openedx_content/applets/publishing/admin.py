@@ -7,7 +7,11 @@ from django.contrib import admin
 from django.db.models import Count, F
 from django.utils.html import format_html
 
-from openedx_django_lib.admin_utils import ReadOnlyModelAdmin, one_to_one_related_model_html
+from openedx_django_lib.admin_utils import (
+    ImmutableModelAdmin,
+    ReadOnlyModelAdmin,
+    one_to_one_related_model_html
+)
 
 from .models import (
     DraftChangeLog,
@@ -19,17 +23,48 @@ from .models import (
     PublishLogRecord,
 )
 from .models.publish_log import Published
+from . import api
 
 
 @admin.register(LearningPackage)
-class LearningPackageAdmin(ReadOnlyModelAdmin):
+class LearningPackageAdmin(admin.ModelAdmin):
     """
     Read-only admin for LearningPackage model
+
+    this should be mutable
     """
-    fields = ["package_ref", "title", "uuid", "created", "updated"]
-    readonly_fields = ["package_ref", "title", "uuid", "created", "updated"]
+    fields = ["package_ref", "title", "uuid", "created", "updated", "description"]
+    readonly_fields = ["uuid", "created", "updated"]
     list_display = ["package_ref", "title", "uuid", "created", "updated"]
     search_fields = ["package_ref", "title", "uuid"]
+
+    def save_model(self, request, obj, form, change):
+        """
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect("/thanks/")
+        """
+        if form.is_valid():
+            package_ref = form.cleaned_data["package_ref"]
+            title = form.cleaned_data["title"]
+            description = form.cleaned_data["description"]
+
+        if change:
+            api.update_learning_package(
+                obj.id, package_ref=package_ref, title=title, description=description,
+            )
+        else:
+            api.create_learning_package(
+                package_ref=package_ref, title=title, description=description,
+            )
+
+    def delete_model(self, request, obj):
+        pass
+
+    def delete_queryset(self, request, queryset):
+        pass
 
 
 class PublishLogRecordTabularInline(admin.TabularInline):
