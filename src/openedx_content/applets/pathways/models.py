@@ -90,17 +90,3 @@ class PathwayItemCriteria(models.Model):
     required_completion_level = models.FloatField(null=True)
     required_grade = models.FloatField(null=True)
 
-
-class StudentPathwayItemStatus(models.Model):
-    """
-    Possible statuses:
-    - Unavailable
-    - Available
-    - Started
-    - Succeeded
-    - Failed
-    State change note: Content may change
-    """
-    id = models.AutoField()
-    name = models.CharField(100)
-

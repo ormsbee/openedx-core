@@ -116,3 +116,20 @@ class SubsectionPathwayItemCriteria(PathwayItemCriteria):
 class SubsectionPathwayItemAttempt(PathwayItemAttempt):
     # I'm not sure it would need a separate attempt type.
     pass
+
+
+
+####
+
+class StudentPathwayItemStatus(models.Model):
+    """
+    Possible statuses:
+    - Unavailable
+    - Available
+    - Started
+    - Succeeded
+    - Failed
+    State change note: Content may change
+    """
+    id = models.AutoField()
+    name = models.CharField(100)
