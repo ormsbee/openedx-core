@@ -2,11 +2,11 @@ from django.db import models
 
 from openedx_catalog.models_api import CatalogCourse
 
-from ..models import PathwayItemCriteria
+from ..models import PathwayStepCriteria
 
 
 #################### This is specific to Courses  ####################
-class CoursePathwayItemCriteria(PathwayItemCriteria):
+class CoursePathwayItemCriteria(PathwayStepCriteria):
     """
     This is a hypothetical PathwayItemCriteria type that can be satisifed by
     a catalog course (as opposed to a specific run).

@@ -51,6 +51,9 @@ INSTALLED_APPS = [
 
     # Debugging
     "debug_toolbar",
+
+    # Used by openedx_content
+    'polymorphic',
 ]
 
 AUTHENTICATION_BACKENDS = [
