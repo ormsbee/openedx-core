@@ -6,7 +6,7 @@ system directory, a zip file archive, or something more exotic down the line.
 Some high level considerations for this module:
 
 1. The error checking is for the file format itself, i.e. extracting  values
-   from the TOML files and statica assets and assembling them for validation.
+   from the TOML files and static assets and assembling them for validation.
    In some cases, this means we do have to look for particular fields to handle
 """
 
@@ -95,6 +95,21 @@ class DuplicateFoundError(ExtractionError):
 
 class UnsupportedFormatError(ExtractionError):
     pass
+
+
+class PayloadExtractor:
+    """
+    Extracts files from a file system and generates unvalidated input.
+    """
+
+    def __init__(self, fs: AbstractFileSystem):
+        self.fs = fs
+
+        if self.fs.exists("package.toml"):
+            self.root = ""
+        elif len(fs.ls('.')) == 1:
+            pass
+
 
 
 def extract_unvalidated_learning_package(
