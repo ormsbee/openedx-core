@@ -95,10 +95,10 @@ edx-opaque-keys[django]==4.0.0
     #   openedx-events
 edx-organizations==8.0.0
     # via -r requirements/base.in
-fastavro==1.12.2
-    # via openedx-events
 email-validator==2.3.0
     # via pydantic
+fastavro==1.12.2
+    # via openedx-events
 fsspec==2026.3.0
     # via -r requirements/base.in
 idna==3.18

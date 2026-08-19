@@ -12,12 +12,11 @@ amqp==5.3.1
     # via
     #   -r requirements/test.txt
     #   kombu
-asgiref==3.12.1
 annotated-types==0.7.0
     # via
     #   -r requirements/test.txt
     #   pydantic
-asgiref==3.11.1
+asgiref==3.12.1
     # via
     #   -r requirements/test.txt
     #   django
@@ -181,17 +180,14 @@ edx-opaque-keys[django]==4.0.0
     #   openedx-events
 edx-organizations==8.0.0
     # via -r requirements/test.txt
-fastavro==1.12.2
-    # via
-    #   -r requirements/test.txt
-    #   openedx-events
-freezegun==1.5.5
-    # via -r requirements/test.txt
-grimp==3.15
 email-validator==2.3.0
     # via
     #   -r requirements/test.txt
     #   pydantic
+fastavro==1.12.2
+    # via
+    #   -r requirements/test.txt
+    #   openedx-events
 freezegun==1.5.5
     # via -r requirements/test.txt
 fsspec==2026.3.0
@@ -286,14 +282,13 @@ pycparser==3.0
     # via
     #   -r requirements/test.txt
     #   cffi
-pydata-sphinx-theme==0.20.0
 pydantic[email]==2.13.3
     # via -r requirements/test.txt
 pydantic-core==2.46.3
     # via
     #   -r requirements/test.txt
     #   pydantic
-pydata-sphinx-theme==0.16.1
+pydata-sphinx-theme==0.20.0
     # via sphinx-book-theme
 pygments==2.20.0
     # via
@@ -424,18 +419,17 @@ typing-extensions==4.16.0
     #   django-stubs-ext
     #   djangorestframework-stubs
     #   edx-opaque-keys
+    #   grimp
     #   import-linter
     #   mypy
-tzdata==2026.3
     #   pydantic
     #   pydantic-core
-    #   pydata-sphinx-theme
     #   typing-inspection
 typing-inspection==0.4.2
     # via
     #   -r requirements/test.txt
     #   pydantic
-tzdata==2026.1
+tzdata==2026.3
     # via
     #   -r requirements/test.txt
     #   kombu

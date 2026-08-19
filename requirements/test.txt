@@ -8,12 +8,11 @@ amqp==5.3.1
     # via
     #   -r requirements/base.txt
     #   kombu
-asgiref==3.12.1
 annotated-types==0.7.0
     # via
     #   -r requirements/base.txt
     #   pydantic
-asgiref==3.11.1
+asgiref==3.12.1
     # via
     #   -r requirements/base.txt
     #   django
@@ -156,17 +155,14 @@ edx-opaque-keys[django]==4.0.0
     #   openedx-events
 edx-organizations==8.0.0
     # via -r requirements/base.txt
-fastavro==1.12.2
-    # via
-    #   -r requirements/base.txt
-    #   openedx-events
-freezegun==1.5.5
-    # via -r requirements/test.in
-grimp==3.15
 email-validator==2.3.0
     # via
     #   -r requirements/base.txt
     #   pydantic
+fastavro==1.12.2
+    # via
+    #   -r requirements/base.txt
+    #   openedx-events
 freezegun==1.5.5
     # via -r requirements/test.in
 fsspec==2026.3.0
@@ -317,9 +313,9 @@ typing-extensions==4.16.0
     #   django-stubs-ext
     #   djangorestframework-stubs
     #   edx-opaque-keys
+    #   grimp
     #   import-linter
     #   mypy
-tzdata==2026.3
     #   pydantic
     #   pydantic-core
     #   typing-inspection
@@ -327,7 +323,7 @@ typing-inspection==0.4.2
     # via
     #   -r requirements/base.txt
     #   pydantic
-tzdata==2026.1
+tzdata==2026.3
     # via
     #   -r requirements/base.txt
     #   kombu

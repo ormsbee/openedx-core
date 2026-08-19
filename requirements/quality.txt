@@ -8,12 +8,11 @@ amqp==5.3.1
     # via
     #   -r requirements/test.txt
     #   kombu
-asgiref==3.12.1
 annotated-types==0.7.0
     # via
     #   -r requirements/test.txt
     #   pydantic
-asgiref==3.11.1
+asgiref==3.12.1
     # via
     #   -r requirements/test.txt
     #   django
@@ -86,7 +85,6 @@ cryptography==49.0.0
     # via
     #   -r requirements/test.txt
     #   pyjwt
-    #   secretstorage
 ddt==1.7.2
     # via -r requirements/test.txt
 dill==0.4.1
@@ -178,17 +176,14 @@ edx-opaque-keys[django]==4.0.0
     #   openedx-events
 edx-organizations==8.0.0
     # via -r requirements/test.txt
-fastavro==1.12.2
-    # via
-    #   -r requirements/test.txt
-    #   openedx-events
-freezegun==1.5.5
-    # via -r requirements/test.txt
-grimp==3.15
 email-validator==2.3.0
     # via
     #   -r requirements/test.txt
     #   pydantic
+fastavro==1.12.2
+    # via
+    #   -r requirements/test.txt
+    #   openedx-events
 freezegun==1.5.5
     # via -r requirements/test.txt
 fsspec==2026.3.0
@@ -220,10 +215,6 @@ jaraco-context==6.1.2
     # via keyring
 jaraco-functools==4.6.0
     # via keyring
-jeepney==0.9.0
-    # via
-    #   keyring
-    #   secretstorage
 jinja2==3.1.6
     # via
     #   -r requirements/test.txt
@@ -389,8 +380,6 @@ rich==15.0.0
     #   twine
 rules==3.5
     # via -r requirements/test.txt
-secretstorage==3.5.0
-    # via keyring
 semantic-version==2.10.0
     # via
     #   -r requirements/test.txt
@@ -437,9 +426,9 @@ typing-extensions==4.16.0
     #   django-stubs-ext
     #   djangorestframework-stubs
     #   edx-opaque-keys
+    #   grimp
     #   import-linter
     #   mypy
-tzdata==2026.3
     #   pydantic
     #   pydantic-core
     #   typing-inspection
@@ -447,7 +436,7 @@ typing-inspection==0.4.2
     # via
     #   -r requirements/test.txt
     #   pydantic
-tzdata==2026.1
+tzdata==2026.3
     # via
     #   -r requirements/test.txt
     #   kombu
